@@ -31,5 +31,6 @@ export class CdkpipelinesDemoStack extends Stack {
     this.urlOutput = new CfnOutput(this, 'Url', {
       value: gw.url,
     });
+
   }
 }
