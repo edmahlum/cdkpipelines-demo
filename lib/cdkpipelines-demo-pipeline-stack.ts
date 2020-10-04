@@ -42,8 +42,8 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
 
         // This is where we add the application stages
 
-        const preprod = new CdkpipelinesDemoStage(this, 'PreProd', {
-            env: { account: 'ACCOUNT1', region: 'us-east-2' }
+       const preprod = new CdkpipelinesDemoStage(this, 'PreProd', {
+            env: { account: '313313563731', region: 'us-west-1' }
         });
         const preprodStage = pipeline.addApplicationStage(preprod);
         preprodStage.addActions(new ShellScriptAction({
@@ -58,7 +58,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
                 'curl -Ssf $ENDPOINT_URL',
             ],
         }));
-        
+
         pipeline.addApplicationStage(new CdkpipelinesDemoStage(this, 'Prod', {
             env: { account: '377251646123', region: 'us-west-1' }
         }));
